@@ -6,6 +6,7 @@ import { CorePlatform } from '@jovotech/platform-core';
 import { NlpjsNlu } from '@jovotech/nlu-nlpjs';
 import { LangEn } from '@nlpjs/lang-en';
 import { SessionDataKey } from './util/SessionDataKeys';
+import { LlmNlu } from './plugins/llmNlu';
 
 /*
 |--------------------------------------------------------------------------
@@ -41,10 +42,11 @@ const app = new App({
     // Add Jovo plugins here
     new CorePlatform({
       plugins: [
-        new NlpjsNlu({
-          languageMap: { en: LangEn },
-          modelsPath: './models',
-        }),
+        // new NlpjsNlu({
+        //   languageMap: { en: LangEn },
+        //   modelsPath: './models',
+        // }),
+        new LlmNlu(),
       ],
     }),
   ],

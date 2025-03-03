@@ -25,7 +25,7 @@ interface Pizza {
 @Component()
 export class LoveHatePizzaComponent extends BaseComponent {
   @Handle({
-    intents: ['None'],
+    intents: ['GeneralIntent'],
     global: true,
     prioritizedOverUnhandled: true,
   })
