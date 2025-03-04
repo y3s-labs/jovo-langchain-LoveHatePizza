@@ -53,6 +53,19 @@ const app = new App({
 
   /*
   |--------------------------------------------------------------------------
+  | Disable User Persistence (GCF is Stateless)
+  |--------------------------------------------------------------------------
+  |
+  | Since Google Cloud Functions are stateless, we disable persistence.
+  |
+  */
+  user: {
+    enabled: false, // Disables user persistence
+    saveOnResponseEnabled: false, // Ensures user data is not stored across requests
+  },
+
+  /*
+  |--------------------------------------------------------------------------
   | Other options
   |--------------------------------------------------------------------------
   |

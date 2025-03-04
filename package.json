@@ -13,7 +13,8 @@
     "prebundle": "rimraf bundle",
     "postbundle": "cd bundle && bestzip ../bundle.zip * && cd ..",
     "bundle:dev": "npm run bundle -- src/app.dev.ts",
-    "eslint": "eslint src test --fix --ext .ts"
+    "eslint": "eslint src test --fix --ext .ts",
+    "deploy:dev": "tsc && gcloud functions deploy jovoApp --entry-point jovoApp --runtime nodejs20 --trigger-http --project healthgpt-dev"
   },
   "dependencies": {
     "@jovotech/db-filedb": "^4.5.2",
@@ -22,6 +23,7 @@
     "@jovotech/plugin-debugger": "^4.5.2",
     "@jovotech/server-express": "^4.5.2",
     "@langchain/openai": "^0.4.4",
+    "firebase-functions": "^6.3.2",
     "langchain": "^0.3.19",
     "openai": "^4.85.4",
     "source-map-support": "^0.5.19"

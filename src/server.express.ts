@@ -17,6 +17,7 @@ const port = process.env.JOVO_PORT || 3000;
   }
 
   await app.initialize();
+
   Webhook.listen(port, () => {
     console.info(`Local server listening on port ${port}.`);
   });
